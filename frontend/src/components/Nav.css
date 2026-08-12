@@ -1,0 +1,184 @@
+/* ======================================
+   NAVBAR — Design professionnel dark
+====================================== */
+
+.navbar {
+    width: 100%;
+    background: var(--navbar-bg, #0f172a);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+    height: var(--navbar-height, 72px);
+}
+
+/* Logo */
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    font-size: 1.15rem;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-logo:hover {
+    opacity: 0.85;
+}
+
+.nav-logo i {
+    color: var(--primary-light);
+    font-size: 1.2rem;
+}
+
+/* Menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.nav-item {
+    display: flex;
+    flex-shrink: 0;
+}
+
+/* Liens */
+.nav-link {
+    color: var(--navbar-text, rgba(255, 255, 255, 0.85));
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background: rgba(37, 99, 235, 0.15);
+    color: var(--navbar-text-hover, #fff);
+}
+
+.nav-link:active {
+    background: rgba(37, 99, 235, 0.25);
+}
+
+/* Panier badge */
+.nav-cart-count {
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: var(--radius-pill);
+    min-width: 20px;
+    text-align: center;
+}
+
+/* ========== Hamburger button — hidden on desktop ========== */
+.nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--navbar-text, rgba(255, 255, 255, 0.85));
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.nav-hamburger:hover {
+    background: rgba(37, 99, 235, 0.15);
+}
+
+/* ========== Mobile (≤900px) ========== */
+@media (max-width: 900px) {
+    .nav-hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+        min-height: 56px;
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    /* Menu is hidden by default on mobile */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 2px;
+        padding: 8px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 4px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    /* Menu shown when open */
+    .nav-menu--open {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: var(--radius-sm);
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .nav-logo i {
+        font-size: 1rem;
+    }
+}

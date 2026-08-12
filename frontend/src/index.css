@@ -1,0 +1,51 @@
+/* =========================================
+   Index — Styles de base de l'application
+   (Les variables CSS sont dans styles/Variable.css)
+   (Les styles globaux sont dans styles/Global.css)
+========================================= */
+
+/* ========== Réinitialisation ========== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family, 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif);
+    background: var(--bg, #f3f6fc);
+    color: var(--text-primary, #0f172a);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+}
+
+/* ========== Éléments HTML ========== */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ========== Layout ========== */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

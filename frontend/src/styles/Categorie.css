@@ -1,0 +1,389 @@
+/* ======================================
+   CATÉGORIES — Design épuré
+====================================== */
+
+/* ===== En-tête hero ===== */
+.categories-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2.5rem 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(124, 58, 237, 0.06) 100%);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-header::before {
+    content: "";
+    position: absolute;
+    top: -60%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.categories-header::after {
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.categories-header .title {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.categories-header .title i {
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
+.categories-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.categories-count {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+/* ===== États : chargement / erreur / vide ===== */
+.categories-loading,
+.categories-error,
+.categories-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.categories-loading p,
+.categories-error p,
+.categories-empty p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.categories-loading i,
+.categories-error i,
+.categories-empty i {
+    font-size: 2.5rem;
+    opacity: 0.5;
+}
+
+.categories-error {
+    color: #dc2626;
+}
+
+.categories-error i {
+    color: #fca5a5;
+}
+
+.categories-empty i {
+    color: var(--text-muted);
+    opacity: 0.35;
+}
+
+.categories-empty .add-btn {
+    margin-top: 0.5rem;
+}
+
+/* Spinner */
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--border-light);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== Grille de catégories ===== */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 1.5rem 0;
+}
+
+.cat-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ===== Carte catégorie — légère, épurée ===== */
+.cat-card-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 10px 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    background: var(--surface);
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s var(--ease-out);
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 80px;
+}
+
+.cat-card-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(2, 6, 23, 0.07);
+    border-color: rgba(37, 99, 235, 0.1);
+}
+
+.cat-card-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Emoji */
+.cat-card-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
+    transition: transform 0.25s var(--ease-out);
+}
+
+.cat-card-btn:hover .cat-card-emoji {
+    transform: scale(1.12);
+}
+
+/* Nom */
+.cat-card-name {
+    display: block;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+.cat-card-btn:hover .cat-card-name {
+    color: var(--text-primary);
+}
+
+/* Flèche */
+.cat-card-arrow {
+    font-size: 0.75rem;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.25s var(--ease-bounce);
+    line-height: 1;
+    color: var(--primary);
+}
+
+.cat-card-btn:hover .cat-card-arrow {
+    opacity: 0.6;
+    transform: translateX(0);
+}
+
+/* ===== Bouton supprimer ===== */
+.cat-card-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(135deg, #fca5a5, #f87171);
+    color: #fff;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.1);
+    transition: all 0.2s var(--ease-bounce);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.cat-card-delete i {
+    font-size: 0.65rem;
+}
+
+.cat-card-delete:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.15);
+    background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+/* ===== Actions en bas ===== */
+.categories-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+}
+
+/* ===== Legacy — cat-btn (utilisé dans les pages produit) ===== */
+.cat-btn {
+    position: relative;
+    min-width: 180px;
+    min-height: 56px;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--border-light);
+    background: var(--surface);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s var(--ease-bounce);
+    gap: 8px;
+}
+
+.cat-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: rgba(124, 58, 237, 0.25);
+    color: var(--secondary);
+    box-shadow: var(--shadow-sm);
+}
+
+.cat-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.categories-btn-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0.8rem;
+    width: 100%;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 1400px) {
+    .categories-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .categories-header {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .categories-header .title {
+        font-size: 1.6rem;
+    }
+
+    .categories-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .categories {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .cat-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .categories-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cat-card-btn {
+        min-height: 70px;
+        padding: 14px 10px 10px;
+    }
+}

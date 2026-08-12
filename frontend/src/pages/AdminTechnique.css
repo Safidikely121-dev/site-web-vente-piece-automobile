@@ -1,0 +1,44 @@
+.admin-inline-form {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.admin-inline-form input {
+  flex: 1 1 200px;
+  padding: 0.55rem 0.85rem;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.admin-form-grid .form-group label {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.admin-form-grid .form-group input,
+.admin-form-grid .form-group select {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+}
+
+.form-group-full {
+  display: flex;
+  align-items: flex-end;
+}

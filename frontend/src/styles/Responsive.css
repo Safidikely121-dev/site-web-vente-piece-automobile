@@ -1,0 +1,354 @@
+/* ======================================
+   RESPONSIVE DESIGN — Breakpoints unifiés
+========================================== */
+
+/* ---- Breakpoint Tablette (≤1024px) ---- */
+@media (max-width: 1024px) {
+    .container {
+        padding: 2rem 1.5rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+/* ---- Breakpoint Mobile large (≤860px) ---- */
+@media (max-width: 860px) {
+    /* Checkout / AjouterCommande two-column grid */
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .demande-grid-main {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .vendeur-actions,
+    .acheteur-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .vendeur-actions button,
+    .acheteur-actions button {
+        width: 100%;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .product-img {
+        height: 160px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .form-box {
+        margin: 1.5rem auto;
+        padding: 1.5rem 1.25rem;
+    }
+
+    /* Pages About / Services / Support */
+    .info-section {
+        padding: 0 0.5rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .info-card h3 {
+        font-size: 1rem;
+    }
+
+    .info-card p,
+    .info-card li {
+        font-size: 0.88rem;
+    }
+
+    /* Panier / Checkout */
+    .cart-summary {
+        padding: 1rem 1.25rem;
+        margin: 1.5rem auto;
+    }
+
+    .order-summary {
+        padding: 1.25rem;
+    }
+
+    .commande-card {
+        padding: 1.25rem;
+    }
+
+    /* ChatWidget */
+    .chat-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .chat-widget-window {
+        width: calc(100vw - 32px);
+        right: 0;
+        max-height: 60vh;
+    }
+}
+
+/* ---- Breakpoint Mobile (≤640px) ---- */
+@media (max-width: 640px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .product-img {
+        height: 130px;
+    }
+
+    .grid .product-card {
+        padding: 12px 12px 14px;
+    }
+
+    .grid .product-card h3 {
+        font-size: 0.85rem;
+    }
+
+    .grid .product-card p {
+        font-size: 0.78rem;
+    }
+
+    .grid .product-card .product-price {
+        font-size: 0.95rem;
+    }
+
+    /* Categories */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .cat-card-btn {
+        padding: 18px 12px 16px;
+        min-height: 85px;
+    }
+
+    .cat-card-emoji {
+        font-size: 1.6rem;
+    }
+
+    .cat-card-name {
+        font-size: 0.85rem;
+    }
+
+    /* Formulaires */
+    .form-box {
+        padding: 1.25rem 1.1rem;
+        margin: 1rem auto;
+    }
+
+    .form-box label {
+        font-size: 0.85rem;
+    }
+
+    .form-box input,
+    .form-box select {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Carte commande */
+    .commande-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .commande-card p {
+        font-size: 0.82rem;
+    }
+
+    /* Cart summary */
+    .cart-summary-row {
+        font-size: 0.9rem;
+    }
+
+    .cart-summary-row.total-row {
+        font-size: 1.05rem;
+    }
+
+    .cart-summary-row .total-price {
+        font-size: 1.15rem;
+    }
+}
+
+/* ---- Breakpoint Très petit mobile (≤520px) ---- */
+@media (max-width: 520px) {
+    .container {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .title {
+        font-size: 1.35rem;
+    }
+
+    .product-img {
+        height: 180px;
+    }
+
+    .btn-row,
+    .btn-group {
+        gap: 0.5rem;
+    }
+
+    .card-btn,
+    .cat-btn,
+    .delete-btn,
+    .add-btn,
+    .add-offer-btn {
+        width: 100%;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .categories {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .cat-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .logo,
+    .entreprise-card .logo {
+        width: 65px;
+        height: 45px;
+    }
+
+    .company-name {
+        font-size: 0.82rem;
+    }
+
+    .card-btn.entreprise-card {
+        min-height: 95px;
+        padding: 14px 10px;
+    }
+
+    /* Search */
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    /* Admin responsive */
+    .admin-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .admin-table {
+        font-size: 0.72rem;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 0.3rem 0.35rem;
+    }
+
+    .admin-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 2.5rem 0 0;
+    }
+
+    .footer-container {
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.15rem;
+    }
+
+    .footer-section p {
+        font-size: 0.82rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.78rem;
+        padding: 1rem;
+    }
+
+    /* Hero buttons */
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* ---- Breakpoint Ultra-petit (≤380px) ---- */
+@media (max-width: 380px) {
+    .container {
+        padding: 1rem 0.6rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .grid .product-card h3 {
+        font-size: 0.8rem;
+    }
+
+    .grid .product-card .product-price {
+        font-size: 0.88rem;
+    }
+
+    .cat-card-btn {
+        padding: 14px 10px 12px;
+        min-height: 75px;
+    }
+
+    .cat-card-emoji {
+        font-size: 1.3rem;
+    }
+
+    .cat-card-name {
+        font-size: 0.78rem;
+    }
+
+    .nav-link {
+        padding: 7px 10px;
+        font-size: 0.82rem;
+    }
+}

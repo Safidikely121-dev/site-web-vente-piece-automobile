@@ -1,0 +1,12 @@
+/* ===========================
+   LOGIN PAGE
+=========================== */
+
+.login-container {
+    min-height: calc(100vh - var(--navbar-height, 72px));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.25rem;
+}

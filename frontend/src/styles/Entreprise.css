@@ -1,0 +1,158 @@
+/* ======================================
+   ENTREPRISES / MARQUES — Design épuré
+   (.grid base pour Entreprises.jsx uniquement;
+    le responsive complet est dans pages/Entreprises.css)
+====================================== */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px;
+    padding: 0 4px;
+}
+
+.grid > * {
+    flex: 0 1 calc(25% - 14px);
+    min-width: 180px;
+}
+
+@media (min-width: 1400px) {
+    .grid > * {
+        flex: 0 1 calc(20% - 16px);
+    }
+}
+
+@media (max-width: 992px) {
+    .grid > * {
+        flex: 0 1 calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid > * {
+        flex: 0 1 calc(50% - 8px);
+    }
+}
+
+@media (max-width: 520px) {
+    .grid > * {
+        flex: 0 1 100%;
+        min-width: unset;
+    }
+}
+
+/* ===== Carte entreprise — minimaliste ===== */
+.card-btn.entreprise-card {
+    width: 100%;
+    min-height: 80px;
+    border-radius: var(--radius-md);
+    padding: 12px 10px;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+    transition: all 0.3s var(--ease-out);
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-btn.entreprise-card:hover {
+    transform: translateY(-3px);
+    background: var(--surface);
+    border-color: rgba(37, 99, 235, 0.08);
+    box-shadow: 0 4px 16px rgba(2, 6, 23, 0.06);
+}
+
+/* ===== Logo entreprise — nu, pas de cadre ===== */
+.entreprise-card .logo {
+    width: 88px;
+    height: 56px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.04));
+    transition: transform 0.3s var(--ease-out);
+}
+
+.card-btn.entreprise-card:hover .logo {
+    transform: scale(1.06);
+}
+
+/* ===== Logo général — sans bordure ===== */
+.logo {
+    width: 88px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    border: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* ===== Nom entreprise — discret ===== */
+.company-name {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+}
+
+.card-btn.entreprise-card:hover .company-name {
+    color: var(--text-primary);
+}
+
+/* ===== Badge entreprise (fallback sans logo) ===== */
+.company-badge {
+    width: 70px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--surface-ghost);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--primary);
+    margin: 0 auto;
+}
+
+/* ===== Bouton ajouter offre ===== */
+.add-offer-btn {
+    margin: 0 auto 1.75rem auto;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--border-medium);
+    background: var(--surface);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-xs);
+    transition: all 0.25s var(--ease-bounce);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-offer-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    border-color: rgba(124, 58, 237, 0.35);
+    color: var(--secondary);
+    box-shadow: var(--shadow-sm);
+}
+
+.add-offer-btn:active {
+    transform: translateY(0px) scale(0.97);
+}

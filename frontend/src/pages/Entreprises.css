@@ -1,0 +1,211 @@
+/* ======================================
+   ENTREPRISES / MARQUES — Styles
+====================================== */
+
+/* Grille responsive */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 12px;
+    padding: 0 4px;
+}
+
+/* Role selector (Register page) */
+.role-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.role-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--border-light);
+    background: var(--surface);
+    cursor: pointer;
+    transition: all var(--duration-normal) ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    flex: 1;
+    min-width: 100px;
+}
+
+.role-option input[type="radio"] {
+    display: none;
+}
+
+.role-option:hover {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.03);
+}
+
+.role-option.active {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.06);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.role-option.role-admin.active {
+    border-color: var(--secondary);
+    background: rgba(124, 58, 237, 0.06);
+    color: var(--secondary);
+}
+
+/* Entreprise card */
+.card-btn.entreprise-card {
+    width: 100%;
+    min-height: 110px;
+    border-radius: var(--radius-lg);
+    padding: 20px 14px;
+    border: 1px solid var(--border-light);
+    background: var(--surface-card);
+    box-shadow: var(--shadow-xs);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.3s ease;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-btn.entreprise-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-btn.entreprise-card:hover::after {
+    opacity: 1;
+}
+
+.card-btn.entreprise-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(124, 58, 237, 0.18);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Logo entreprise */
+.entreprise-card .logo {
+    width: 80px;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.04));
+    transition: transform 0.3s var(--ease-out);
+}
+
+.card-btn.entreprise-card:hover .logo {
+    transform: scale(1.08);
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    padding: 6px;
+    background: var(--surface);
+    box-shadow: var(--shadow-xs);
+}
+
+/* Nom entreprise */
+.company-name {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+/* Badge */
+.company-badge {
+    width: 80px;
+    height: 55px;
+    border-radius: var(--radius-md);
+    background: var(--surface-ghost);
+    border: 1px solid var(--border-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin: 0 auto;
+}
+
+/* Bouton ajouter offre */
+.add-offer-btn {
+    margin: 0 auto 1.75rem auto;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--border-medium);
+    background: var(--surface);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-xs);
+    transition: all 0.25s var(--ease-bounce);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-offer-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: rgba(124, 58, 237, 0.35);
+    color: var(--secondary);
+    box-shadow: var(--shadow-md);
+}
+
+.add-offer-btn:active {
+    transform: translateY(0px) scale(0.97);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+}
+
+@media (max-width: 520px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}

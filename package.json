@@ -1,0 +1,16 @@
+{
+  "name": "site-web-vente-piece-automobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AutoParts - Site web de vente de pièces automobiles (mémoire de Licence)",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run start:dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:backend": "npm --prefix backend run build",
+    "build:frontend": "npm --prefix frontend run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start:prod:backend": "npm --prefix backend run start:prod",
+    "lint": "npm --prefix backend run lint && npm --prefix frontend run lint"
+  }
+}

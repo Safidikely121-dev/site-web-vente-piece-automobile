@@ -1,0 +1,336 @@
+.admin-dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.admin-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary, #3b82f6);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 900;
+}
+
+.admin-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.admin-subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-top: -0.5rem;
+}
+
+.admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.admin-badge-role {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.badge-tech {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.badge-com {
+    background: rgba(249, 115, 22, 0.15);
+    color: #f97316;
+}
+
+
+/* Stats Cards */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: var(--primary, #3b82f6);
+}
+
+.stat-card.warning i {
+    color: #f59e0b;
+}
+
+.stat-card.info i {
+    color: #22d3ee;
+}
+
+.stat-card.secondary i {
+    color: #a78bfa;
+}
+
+.stat-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card strong {
+    font-size: 1.5rem;
+    color: #f1f5f9;
+}
+
+.stat-card span {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+
+/* Tabs */
+
+.admin-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    padding: 0.65rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tab-btn:hover {
+    background: #334155;
+    border-color: var(--primary, #3b82f6);
+}
+
+.tab-btn.active {
+    background: var(--primary, #3b82f6);
+    border-color: var(--primary, #3b82f6);
+    color: #fff;
+}
+
+
+/* Sections */
+
+.admin-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.admin-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+}
+
+.empty-msg {
+    color: #64748b;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+/* Table */
+
+.admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.65rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+    white-space: nowrap;
+}
+
+.admin-table th {
+    background: #0f172a;
+    color: #94a3b8;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.admin-table td {
+    color: #e2e8f0;
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.row-delivered {
+    opacity: 0.6;
+}
+
+.row-blocked {
+    opacity: 0.5;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+
+/* Badges */
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-success {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+}
+
+.badge-admin {
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+}
+
+.badge-vendeur {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.badge-acheteur {
+    background: rgba(34, 211, 238, 0.15);
+    color: #22d3ee;
+}
+
+.badge-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+
+/* Action buttons container */
+
+.action-btns {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+}
+
+
+/* Buttons small */
+
+.btn-small {
+    padding: 0.35rem 0.85rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-success {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.btn-success:hover {
+    background: #22c55e;
+    color: #fff;
+}
+
+.btn-warning {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.btn-warning:hover {
+    background: #f59e0b;
+    color: #fff;
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.btn-danger:hover {
+    background: #ef4444;
+    color: #fff;
+}
+
+.btn-danger-outline {
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #ef4444;
+}
+
+.btn-danger-outline:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .admin-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    .admin-table {
+        font-size: 0.8rem;
+    }
+    .admin-table th,
+    .admin-table td {
+        padding: 0.4rem 0.5rem;
+    }
+}
